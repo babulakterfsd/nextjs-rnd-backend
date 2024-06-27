@@ -39,11 +39,11 @@ const userSchema = new Schema<TUser, TUserModel>(
     role: {
       type: String,
       enum: {
-        values: ['admin', 'vendor', 'customer'],
+        values: ['admin', 'user'],
         message:
-          '{VALUE} is not a valid role. User must be either admin, vendor or customer',
+          '{VALUE} is not a valid role. User must be either admin or user',
       },
-      default: 'customer',
+      default: 'user',
     },
     lastTwoPasswords: [
       {
@@ -54,36 +54,6 @@ const userSchema = new Schema<TUser, TUserModel>(
     profileImage: {
       type: String,
       default: '',
-    },
-    isEmailVerified: {
-      type: String,
-      required: [true, 'isEmailVerified is required'],
-      default: 'false',
-    },
-    isBlocked: {
-      type: Boolean,
-      required: [true, 'isBlocked is required'],
-      default: false,
-    },
-    address: {
-      address: {
-        type: String,
-      },
-      city: {
-        type: String,
-      },
-      state: {
-        type: String,
-      },
-      country: {
-        type: String,
-      },
-      postalCode: {
-        type: String,
-      },
-      mobile: {
-        type: String,
-      },
     },
   },
   {

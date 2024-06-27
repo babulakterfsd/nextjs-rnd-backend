@@ -1,38 +1,13 @@
-# GizmoBuy (Backend) - A multi vendor e-commerce platform
+# Nextjs-rnd-backend : a demo server to check nextjs latest features
 
 ## Features
 
-##### Customer :
-
-- can view , buy products
-- can view order history and details
-- can view and update profile, including address and password
-- can view and update cart
-- can view and update wishlist
-
-##### Vendor :
-
-- can view and update profile, including address and password
-- can add, view, update and delete products
-- can view and update orders
-- can view sells history and details
-- can view and reply to customer reviews
-
-##### Admin :
-
-- can view and update profile, including address and password
-- can block and unblock any customers and vendors
-- can see all the orders and details and earnings
-- can see and update all the products and details
-- can create cupons and discounts and manage them
+- User authentication
+- User authorization
 
 ## technologies:
 
-      * Backend :
-          - TypeScript, Node.js, Express.js, MongoDB, Mongoose, Zod, Bcrypt, JWT, nodemailer, multer, cloudinary
-
-      * Frontend :
-          - TypeScript, React, Redux, Tailwindcss, Rtk query, sonner, react-hook-form
+- TypeScript, Node.js, Express.js, MongoDB, Mongoose, Zod, Bcrypt, JWT
 
 ## How to run
 
@@ -42,19 +17,15 @@
 
 ### live link
 
-- client: https://gizmobuy.vercel.app
-- server: https://gizmobuy-backend.vercel.app
+- client: https://nextjs-rnd.vercel.app
+- server: https://nextjs-rnd-backend.vercel.app
 
 ### DEMO LOGIN DETAILS
 
-      * Customer :
-          - email: democustomer@gmail.com
-          - password: customer123
-
-      * Vendor :
-          - email: demovendor@gmail.com
-          - password: vendor123
+      * User :
+          - email: user@gmail.com
+          - password: user123
 
       * Admin :
-          - email: demoadmin@gmail.com
+          - email: admin@gmail.com
           - password: admin123

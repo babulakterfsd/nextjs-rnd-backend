@@ -38,7 +38,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
       throw new JsonWebTokenError('Unauthorized Access!');
     }
 
-    req.shopkeeper = decodedUser as JwtPayload & { role: string };
+    req.user = decodedUser as JwtPayload & { role: string };
     next();
   });
 };

@@ -17,7 +17,7 @@ export default {
   cloudinary_api_secret: process.env.CLOUDINARY_API_SECRET,
   client_url:
     process.env.NODE_ENV === 'development'
-      ? 'http://localhost:5173'
+      ? 'http://localhost:3000'
       : process.env.CLIENT_URL,
 
   email_app_password: process.env.EMAIL_APP_PASSWORD,

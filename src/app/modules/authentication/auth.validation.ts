@@ -9,16 +9,12 @@ export const userSchema = z.object({
     invalid_type_error: ' must be string',
     required_error: ' is required',
   }),
-  isEmailVerified: z.string({
-    invalid_type_error: ' must be boolean',
-    required_error: ' is required',
-  }),
   password: z.string({
     invalid_type_error: ' must be string',
     required_error: ' is required',
   }),
-  role: z.enum(['admin', 'vendor', 'customer'], {
-    invalid_type_error: 'User must be either admin, vendor or customer',
+  role: z.enum(['admin', 'user'], {
+    invalid_type_error: 'User must be either admin or user',
     required_error: ' is required',
   }),
   lastTwoPasswords: z
@@ -47,32 +43,6 @@ export const userSchema = z.object({
       required_error: ' is required',
     })
     .optional(),
-  isBlocked: z.boolean({
-    invalid_type_error: ' must be boolean',
-    required_error: ' is required',
-  }),
-  address: z
-    .object({
-      address: z.string({
-        invalid_type_error: ' must be string',
-      }),
-      city: z.string({
-        invalid_type_error: ' must be string',
-      }),
-      state: z.string({
-        invalid_type_error: ' must be string',
-      }),
-      country: z.string({
-        invalid_type_error: ' must be string',
-      }),
-      postalCode: z.string({
-        invalid_type_error: ' must be string',
-      }),
-      mobile: z.string({
-        invalid_type_error: ' must be string',
-      }),
-    })
-    .optional(),
 });
 
 export const signupSchema = z.object({
@@ -88,8 +58,8 @@ export const signupSchema = z.object({
     invalid_type_error: ' must be string',
     required_error: ' is required',
   }),
-  role: z.enum(['admin', 'vendor', 'customer'], {
-    invalid_type_error: 'User must be either admin, vendor or customer',
+  role: z.enum(['admin', 'user'], {
+    invalid_type_error: 'User must be either admin or user',
     required_error: ' is required',
   }),
 });

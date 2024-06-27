@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ['https://gizmobuy.vercel.app', 'http://localhost:5173'],
+    origin: ['https://nextjs-rnd.vercel.app', 'http://localhost:3000'],
     credentials: true,
   }),
 );
@@ -23,7 +23,7 @@ app.get('/', (req: Request, res: Response) => {
   res.status(httpStatus.OK).json({
     success: true,
     statusCode: httpStatus.OK,
-    message: 'Welcome to GizmoBuy Server',
+    message: 'Welcome to nextjs-rnd Server',
     data: null,
   });
 });

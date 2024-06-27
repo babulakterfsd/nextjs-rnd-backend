@@ -1,7 +1,7 @@
 {
-  "name": "gizmobuy-backend",
+  "name": "nextjs-rnd-backend",
   "version": "1.0.0",
-  "description": "create apis for gizmobuy",
+  "description": "create apis for nextjs-rnd",
   "main": "index.js",
   "scripts": {
     "start:prod": "node ./dist/server.js",
