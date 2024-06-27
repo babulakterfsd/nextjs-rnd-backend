@@ -45,12 +45,6 @@ const userSchema = new Schema<TUser, TUserModel>(
       },
       default: 'user',
     },
-    lastTwoPasswords: [
-      {
-        oldPassword: String,
-        changedAt: Date,
-      },
-    ],
     profileImage: {
       type: String,
       default: '',
