@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ['https://nextjs-rnd.vercel.app', 'http://localhost:3000'],
+    origin: [
+      'https://nextjs-rnd-babulakterfsd.vercel.app',
+      'http://localhost:3000',
+    ],
     credentials: true,
   }),
 );
