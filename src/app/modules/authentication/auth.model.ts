@@ -28,12 +28,12 @@ const userSchema = new Schema<TUser, TUserModel>(
       minlength: [6, 'Password should be at least 6 characters long'],
       validate: {
         validator: (value: string) => {
-          // Password must contain at least one letter and one numeric character
-          const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
+          // Password must contain at least one uppercase letter and one numeric character
+          const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])/;
           return passwordRegex.test(value);
         },
         message: () =>
-          'Password should contain at least one letter and one numeric character',
+          ' Password must contain at least one uppercase letter and one numeric character',
       },
     },
     role: {
