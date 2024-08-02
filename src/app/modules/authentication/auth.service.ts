@@ -74,13 +74,13 @@ const loginUserInDB = async (user: TUser) => {
     expiresIn: config.jwt_access_expires_in,
   });
 
-  const refreshfToken = jwt.sign(payload, config.jwt_refresh_secret as string, {
+  const refreshToken = jwt.sign(payload, config.jwt_refresh_secret as string, {
     expiresIn: config.jwt_refresh_expires_in,
   });
 
   return {
     accesstoken,
-    refreshfToken,
+    refreshToken,
     userFromDB,
   };
 };

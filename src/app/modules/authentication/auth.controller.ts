@@ -21,9 +21,9 @@ const registerUser = catchAsync(async (req, res) => {
 //login user
 const loginUser = catchAsync(async (req, res) => {
   const result = await UserServices.loginUserInDB(req.body);
-  const { accesstoken, refreshfToken, userFromDB } = result;
+  const { accesstoken, refreshToken, userFromDB } = result;
 
-  res.cookie('refreshfToken', refreshfToken, {
+  res.cookie('refreshToken', refreshToken, {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
   });
@@ -39,7 +39,7 @@ const loginUser = catchAsync(async (req, res) => {
         email: userFromDB?.email,
         role: userFromDB?.role,
       },
-      token: accesstoken,
+      accessToken: accesstoken,
     },
   });
 });
@@ -59,7 +59,7 @@ const verifyToken = catchAsync(async (req, res) => {
 //get access token using refresh token
 const getAccessTokenUsingRefreshToken = catchAsync(async (req, res) => {
   const result = await UserServices.getAccessTokenByRefreshToken(
-    req.cookies?.refreshfToken,
+    req.cookies?.refreshToken,
   );
 
   sendResponse(res, {
@@ -94,7 +94,7 @@ const getUserProfile = catchAsync(async (req, res) => {
 
 // logout user
 const logoutUser = catchAsync(async (req, res) => {
-  res.clearCookie('refreshfToken', {
+  res.clearCookie('refreshToken', {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
   });
