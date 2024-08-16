@@ -24,8 +24,14 @@ const loginUser = catchAsync(async (req, res) => {
   const { accesstoken, refreshToken, userFromDB } = result;
 
   res.cookie('refreshToken', refreshToken, {
-    secure: config.NODE_ENV === 'production',
+    secure: true,
     httpOnly: true,
+    sameSite: 'None' as 'none',
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    // domain:
+    //   config.NODE_ENV === 'production'
+    //     ? 'nextjs-rnd-backend.vercel.app'
+    //     : 'localhost:5000',
   });
 
   sendResponse(res, {
