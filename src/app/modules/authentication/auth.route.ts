@@ -1,11 +1,16 @@
 import express from 'express';
+import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserControllers } from './auth.controller';
 import { loginSchema, signupSchema } from './auth.validation';
 
 const router = express.Router();
 
-router.get('/get-profile', UserControllers.getUserProfile);
+router.get(
+  '/get-profile',
+  auth('admin', 'user'),
+  UserControllers.getUserProfile,
+);
 router.post('/logout', UserControllers.logoutUser);
 
 router.post(
